@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * Implements hook_menu()
+ */
+function cats_menu() {
+  $item = array();
+  $item['cats'] = array
+  (
+    'title' => 'All cats',
+    //'access callback' => TRUE,
+    'access arguments' => array('access content'),
+    'page callback' => 'all_cats_page',
+    'cache' => DRUPAL_NO_CACHE,
+  );
+
+  return $item;
+}
+
+/**
+ * hook theme()
+ */
+function cats_theme(){
+  return array(
+    'all_cats' => array(
+      'template' => 'all-cats',
+    ),
+  );
+}
+
+/**
+ * All cats callback
+ */
+function all_cats_page() {
+  angularjs_init_application('cats');
+  drupal_add_library('angularjs', 'angularjs');
+
+  $path = drupal_get_path('module', 'cats');
+  drupal_add_js($path . '/js/cats.gen.js');
+
+  return theme('all_cats');
+}

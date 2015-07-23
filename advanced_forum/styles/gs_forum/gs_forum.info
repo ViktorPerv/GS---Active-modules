@@ -1,0 +1,10 @@
+
+name = GS Forum
+description = Простой и лаконичный форум для портала
+version = 2.x
+base style = naked
+
+; Information added by Drupal.org packaging script on 2015-02-10
+version = "7.x-2.5"
+core = "7.x"
+project = "advanced_forum"

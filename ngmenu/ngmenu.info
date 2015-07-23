@@ -1,0 +1,4 @@
+name = Custom NJ Menu
+description = Выводит Angular JS меню
+core = 7.x
+#All styles please push to Main GS theme in less
